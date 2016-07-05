@@ -1,0 +1,64 @@
+.gallery-content {
+  .pageTopBorder();
+
+  p {
+
+    &.page-name {
+      .pagetitle();
+    }
+  }
+
+  .list-albums {
+    margin-top: 57px;
+
+    &__album-title {
+      border-bottom: 1px @black solid;
+      padding-bottom: 19px;
+
+      span {
+        font: bold 30px/30px @ptserif;
+        color: @linkTop;
+
+        span {
+          text-transform: uppercase;
+        }
+      }
+
+      a {
+        font: bold 16px/30px @ptserif;
+        color: @linkGallery;
+        text-decoration: underline;
+        padding-left: 6px;
+      }
+    }
+
+    &__photo {
+      margin-bottom: 42px;
+
+      .wrap {
+        .wrapImg(25px);
+      }
+    }
+  }
+
+  .pagination-albums {
+    text-align: center;
+    margin-bottom: 52px;
+
+      ul {
+        font-size: 0;
+
+          li {
+            display: inline-block;
+
+              a {
+                font: 14px @ptserif;
+                color: #fff;
+                border: 1px @pagiColor solid;
+                background-color: @mapReview;
+                padding: 4px 12px;
+              }
+          }
+      }
+  }
+}
