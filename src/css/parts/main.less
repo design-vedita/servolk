@@ -1,0 +1,653 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-image: url(../img/body.jpg);
+}
+header {
+  padding-top: 17px;
+
+    .top-menu {
+        margin-top: 83px;
+        font-size: 0;
+        text-align: justify;
+
+        &::after {
+          display: inline-block;
+          content: '';
+          width: 100%;
+        }
+
+        li {
+          display: inline-block;
+          padding-right: 25px;
+          position: relative;
+
+            &:not(:last-of-type)::after {
+              display: block;
+              content: '';
+              width: 5px;
+              height: 5px;
+              position: absolute;
+              border-radius: 50%;
+              right: 0;
+              top: calc(50% - 2.5px);
+              background-color: @linkTop;
+            }
+
+          
+            a {
+              color: @linkTop;
+              font: 18px @ptserif;
+            }
+        }
+    }
+
+    .call {
+      font: 20px/24px @ptserif;
+      color: @black;
+      margin-top: 77px;
+      display: inline-block;
+      vertical-align: middle;
+
+        span {
+          margin-left: 7px;
+          vertical-align: middle;
+        }
+    }
+
+    .search {
+      display: inline-block;
+      margin-top: 77px;
+      vertical-align: middle;
+      height: 24px;
+      border-left: 1px @gray solid;
+      margin-left: 10px;
+      position: relative;
+
+        form {
+          display: none;
+        }
+
+        &-ico {
+         margin-left: 45%;
+          cursor: pointer;
+        }
+    }
+
+  .slider-block {
+    margin-top: 12px;
+    overflow: hidden;
+
+      .slick-dots {
+        margin-top: -40px;
+        margin-left: 15px;
+        z-index: 10;
+        position: relative;
+
+          li {
+            display: inline-block;
+            margin-right: 5px;
+
+              &:last-of-type {
+                margin-right: 0;
+              }
+
+              button {
+                background-color: #fff;
+                border-radius: 50%;
+                width: 13px;
+                height: 13px;
+                border: none;
+                font-size: 0;
+              }
+
+              &.slick-active {
+
+                  button {
+                    background-color: @yellow;
+                  }
+              }
+          }
+      }
+
+      .left-slider {
+        padding-right: 0;
+      }
+
+      .right-slider {
+        padding-left: 0;
+
+          .list-bath {
+
+              &__item {
+                height: 169px;
+                position: relative;
+
+                  img {
+                    width: 100%;
+                  }
+
+                  &__title {
+                    position: absolute;
+                    width: 100%;
+                    height: 45px;
+                    background-image: url("../img/circle.png");
+                    bottom: 0;
+                    text-align: center;
+                    background-size: cover;
+
+                      p {
+                        font: 24px/12px @ptserif;
+                        color: @yellow;
+                        padding-top: 14px;
+                      }
+                  }
+              }
+          }
+      }
+
+
+  }
+}
+
+#content {
+
+    .room {
+      margin-top: 91px;
+      margin-bottom: 26px;
+
+        &__element {
+          background-color: @linkTop;
+
+            ul {
+              font-size: 0;
+            }
+
+            li {
+              display: inline-block;
+              vertical-align: top;
+
+                a:not(.link) img {
+                  width: 100%;
+                  height: auto;
+                }
+
+                &:last-of-type {
+                  width: calc(~'100% - 171px');
+                  box-sizing: border-box;
+                  padding-left: 27px;
+                  margin-top: 37px;
+                }
+
+                p {
+
+                    &.title {
+                      font: bold 20px/12px @ptserif;
+                      color: @yellow;
+                      margin-bottom: 22px;
+                    }
+
+                    &.annotation {
+                      font: 15px/20px @ptserif;
+                      color: #fff;
+                      margin-bottom: 30px;
+                    }
+                }
+
+                a.link {
+                  font: bold 14px/12px @ptserif;
+                  color: @linkRoom;
+                  display: block;
+                  text-align: right;
+                  padding-right: 16px;
+                  margin-bottom: 10px;
+
+                    img {
+                      margin-right: 3px;
+                    }
+                }
+            }
+        }
+    }
+
+    .delimiter {
+      position: relative;
+      text-align: center;
+
+        &::before {
+          display: block;
+          content: '';
+          width: 47%;
+          height: 1px;
+          background-color: @delimiter;
+          position: absolute;
+          left: 0;
+          top: 50%;
+        }
+
+        &::after {
+          display: block;
+          content: '';
+          width: 47%;
+          height: 1px;
+          background-color: @delimiter;
+          position: absolute;
+          right: 0;
+          top: 50%;
+        }
+
+        img {
+
+        }
+    }
+
+    .partners {
+      margin-top: 36px;
+      font-size: 0;
+
+        &__img {
+
+            img {
+              width: 100%;
+              height: auto;
+            }
+        }
+
+        &__text {
+          background-color: @delimiter;
+          padding-left: 28px;
+          padding-right: 25px;
+          padding-bottom: 35px;
+
+            p {
+
+                &.title {
+                  font: 24px/30px @ptserif;
+                  color: #fff;
+                  text-align: center;
+                  text-transform: uppercase;
+                  padding-bottom: 19px;
+                  border-bottom: 1px @border solid;
+                  padding-top: 35px;
+                  margin-bottom: 0;
+                }
+            }
+
+            .annotation {
+              margin-top: 25px;
+              padding-left: 23px;
+              padding-right: 20px;
+
+                p {
+                  font: 15px/24px @ptserif;
+                  color: @border;
+                  margin-bottom: 0;
+                }
+            }
+
+            a.link-site {
+              display: block;
+              width: 169px;
+              height: 36px;
+              border-radius: 5px;
+              margin: 24px auto 0;
+              background-color: @linkSite;
+              color: #fff;
+              font: bold 16px/12px @ptserif;
+              text-align: center;
+              box-sizing: border-box;
+              padding-top: 11px;
+            }
+        }
+
+        .bath-description {
+            background-color: @bathDesc;
+            box-sizing: border-box;
+            padding-left: 55px;
+            padding-right: 55px;
+            padding-top: 35px;
+
+              .title {
+                font: 24px/30px @ptserif;
+                color: @yellow;
+                text-transform: uppercase;
+                margin-top: 15px;
+                margin-bottom: 0;
+              }
+
+              &__text {
+                margin-top: 15px;
+                padding-bottom: 35px;
+
+                  p {
+                    font: 15px/24px @ptserif;
+                    color: @border;
+                    margin-bottom: 0;
+                  }
+
+                  h2 {
+                    font: 18px/30px @ptserif;
+                    color: @yellow;
+                    margin-top: 7px;
+                    margin-bottom: 7px;
+                  }
+
+                  a {
+                    font: bold 16px/12px @ptserif;
+                    color: @black;
+                    background-color: #fff;
+                    padding-top: 12px;
+                    padding-bottom: 12px;
+                    box-sizing: border-box;
+                    border-radius: 5px;
+                    display: block;
+                    width: 168px;
+                    margin: 35px auto 0;
+                    text-align: center;
+                  }
+
+              }
+        }
+    }
+
+    .reviews {
+      background-color: #fff;
+      margin-top: 43px;
+      padding-bottom: 20px;
+
+        .delimiter {
+
+            &::after {
+              right: 6px;
+            }
+
+            &::before {
+              left: 6px;
+            }
+        }
+
+        .title {
+          font: 30px @ptserif;
+          color: @linkTop;
+          text-align: center;
+          position: relative;
+          padding-top: 23px;
+          letter-spacing: 1.3px;
+          padding-bottom: 8px;
+
+            &::after {
+              display: block;
+              content: '';
+              position: absolute;
+              width: 128px;
+              height: 1px;
+              left: calc(~'50% - 64px');
+              bottom: 0;
+              background-color: @black;
+            }
+        }
+
+        &-slider {
+          margin-top: 30px;
+          padding-left: 46px;
+          padding-right: 267px;
+          position: relative;
+
+            .slick-arrow {
+              position: absolute;
+              right: 0;
+              top: 38px;
+              width: 43px;
+              height: 43px;
+              border-radius: 50%;
+              border: none;
+              background-color: @linkTop;
+              transition: background 200ms linear;
+              background-size: 7px 11px;
+              background-position: center;
+              background-repeat: no-repeat;
+              background-image: url(../img/arrow.png);
+
+                &.slick-prev {
+                  right: 99px;
+                  transform: rotate(180deg);
+                }
+
+                &.slick-next {
+                  right: 51px;
+                }
+
+                &:hover {
+                  background-color: @slideArrow;
+                }
+            }
+
+            p {
+              font: 18px/30px @ptserif;
+              color: @linkTop;
+            }
+
+            ul {
+              font-size: 0;
+              margin-bottom: 20px;
+
+              li {
+                display: inline-block;
+                vertical-align: top;
+
+                &:first-child {
+
+                    img {
+                      margin-top: 22px;
+                    }
+                }
+
+                &:last-of-type {
+                  width: calc(~'100% - 47px');
+                  padding-left: 28px;
+                }
+
+                .reviewer-block {
+                  padding-left: 73px;
+                  margin-top: 52px;
+
+                    &::after {
+                      display: block;
+                      content: '';
+                      clear: both;
+                    }
+
+                    &__img {
+                      width: 92px;
+                      height: 92px;
+                      border-radius: 50%;
+                      overflow: hidden;
+                      float: left;
+
+                        img {
+                          width: 100%;
+                          height: auto;
+                        }
+                    }
+
+                    &__description {
+                      width: calc(~'100% - 109px');
+                      box-sizing: border-box;
+                      float: left;
+                      margin-left: 17px;
+                      border-left: 1px @borderGray solid;
+                      padding-left: 23px;
+                      padding-top: 20px;
+
+                       p {
+
+                          &.name {
+                            font: bold 20px @ptserif;
+                            color: @linkTop;
+                            margin-bottom: 2px;
+                          }
+
+                          &.city {
+                            font: 12px @ptserif;
+                            color: @city;
+                          }
+                       }
+                    }
+                }
+              }
+            }
+        }
+    }
+
+    .gallery {
+      margin-top: 19px;
+
+        .title {
+          font: 30px @ptserif;
+          color: @linkTop;
+          text-align: center;
+          position: relative;
+          letter-spacing: 1.3px;
+          padding-bottom: 8px;
+
+          &::after {
+            display: block;
+            content: '';
+            position: absolute;
+            width: 128px;
+            height: 1px;
+            left: calc(~'50% - 64px');
+            bottom: 0;
+            background-color: @black;
+          }
+        }
+
+        .wrap {
+          margin-left: -1.5px;
+          margin-right: -1.5px;
+
+            ul {
+              font-size: 0;
+              margin-top: 31px;
+
+                li {
+                  width: 20%;
+                  padding-left: 1.5px;
+                  padding-right: 1.5px;
+                  display: inline-block;
+
+                  img {
+                    width: 100%;
+                    height: auto;
+                  }
+                }
+            }
+        }
+    }
+
+    #index-map {
+      width: 100%;
+      height: 345px;
+    }
+
+    .index-map {
+      margin-top: 77px;
+    }
+
+}
+footer {
+  background-color: @black;
+  padding-top: 22px;
+
+    .footer-logo {
+
+        img {
+          width: 100%;
+          max-width: 137px;
+          min-width: 110px;
+        }
+    }
+
+    .footer-nav {
+      margin-top: 20px;
+
+        ul {
+          font-size: 0;
+
+          li {
+            display: inline-block;
+            width: 50%;
+
+             a {
+               font: 18px/30px @ptserif;
+               color: #fff;
+             }
+          }
+        }
+    }
+
+    .phone-footer-ico {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+
+
+     .phone-footer {
+       vertical-align: middle;
+       font: 24px/24px @ptserif;
+       color: #fff;
+     }
+
+    .logof {
+      padding-bottom: 30px;
+    }
+
+    .footer-address {
+      font: 18px/24px @ptserif;
+      color: #fff;
+      margin-top: 13px;
+    }
+
+    .soc-network {
+      text-align: right;
+      padding-right: 8.5%;
+      margin-top: 18px;
+
+        ul {
+          font-size: 0;
+
+            li {
+              display: inline-block;
+              margin-right: 1.5%;
+            }
+        }
+    }
+
+    .job-logo {
+      text-align: right;
+    }
+
+    .address-f {
+      margin-top: 10px;
+    }
+
+    .copyright-block {
+      background-color: @dark;
+      padding: 30px 0;
+
+        p {
+          font: 15px/15px @ptserif;
+          color: @copyColor;
+          margin-bottom: 0;
+        }
+
+        span {
+          color: @copyColor;
+          font: 11px/12px @ptserif;
+          margin-right: 14px;
+        }
+    }
+}

@@ -1,0 +1,230 @@
+.map-content {
+  border-top: 1px @mapBorder solid;
+  margin-top: 10px;
+  padding-top: 31px;
+
+    p {
+
+        &.good-name {
+          font: bold 54px/48px @ptserif;
+          color: @linkTop;
+          text-align: center;
+          margin-bottom: 0;
+        }
+    }
+
+    .breadcrumbs {
+        text-align: center;
+
+        ul {
+
+            li {
+              display: inline-block;
+              font: 16px/48px @ptserif;
+              color: @linkTop;
+
+                a {
+                  font: 16px/48px @ptserif;
+                  color: @linkTop;
+                  text-transform: uppercase;
+                }
+              
+                span {
+                  text-transform: uppercase;
+                  color: @red;
+                }
+            }
+        }
+    }
+
+    &__description {
+      margin-top: 27px;
+      background-color: @bathDesc;
+      margin-bottom: 45px;
+
+
+        &__inner-map {
+          padding: 40px 0 28px 45px;
+
+            &__reviews {
+              margin-top: 99px;
+
+                .count {
+                    font: 24px/30px @ptserif;
+                    color: @yellow;
+                    text-transform: uppercase;
+                    padding-bottom: 22px;
+                    border-bottom: 1px @lineMap solid;
+                }
+
+                .read-review {
+                  font: 24px/30px @ptserif;
+                  color: @yellow;
+                  text-transform: uppercase;
+                  padding-bottom: 22px;
+                  border-bottom: 1px @lineMap solid;
+                  margin-top: 78px;
+                }
+
+                &__item {
+                  margin-top: 28px;
+                  width: 100%;
+                  padding: 30px 22px 12px 13px;
+                  background-color: @mapReview;
+
+                    &__img {
+                      width: 89px;
+                      float: left;
+                      margin-right: 20px;
+
+                        img {
+                          width: 100%;
+                          height: auto;
+                        }
+
+                        p {
+
+                            &.title-reviewer {
+                              font: 14px/24px @ptserif;
+                              color: @mapReviewer;
+                              margin-top: 13px;
+                              margin-bottom: 0;
+                            }
+                        }
+                    }
+
+                    &__text {
+                      width: calc(~'100% - 109px');
+                      float: left;
+
+                        p {
+                          font: 15px/24px @ptserif;
+                          color: @mapReviewText;
+                          margin-top: -7px;
+                        }
+                    }
+
+                    &__date {
+                      clear: both;
+                      text-align: right;
+                      position: relative;
+                      top: -10px;
+
+                        span {
+                          font: 14px/24px @ptserif;
+                          color: @mapReviewText;
+                          margin-right: 3.5%;
+                          vertical-align: middle;
+                        }
+
+                        a {
+                          padding:  9px 25px;
+                          background-color: #6f6f6f;
+                          font: bold 14px/24px @ptserif;
+                          color: #fff;
+                          text-transform: uppercase;
+                          border-radius: 5px;
+                          vertical-align: middle;
+                        }
+                    }
+                }
+
+                &__form {
+                  margin-top: 44px;
+                  text-align: right;
+
+                    input {
+                      outline: none;
+                      border-radius: 0;
+                      -webkit-appearance: none;
+                      box-shadow: none;
+
+                        &[type=text] {
+                          width: 100%;
+                          height: 44px;
+                          border: none;
+                          background-color: #fff;
+                          margin-bottom: 24px;
+                          box-sizing: border-box;
+                          padding-left: 16px;
+                          font: 15px/24px @ptserif;
+                          color: @black;
+                        }
+
+                        &[type=submit] {
+                          padding: 7px 24px;
+                          border-radius: 5px;
+                          background-color: @submitReviewmap;
+                          color: #fff;
+                          font: bold 14px/24px @ptserif;
+                          border: none;
+                          cursor: pointer;
+                          text-transform: uppercase;
+                          margin-top: 18px;
+                        }
+                    }
+
+                    textarea {
+                      font: 15px/24px @ptserif;
+                      color: @black;
+                      box-sizing: border-box;
+                      padding-left: 14px;
+                      padding-top: 10px;
+                      width: 100%;
+                      resize: none;
+                      height: 137px;
+                    }
+                }
+            }
+        }
+
+        &__text {
+          padding: 40px 24px 0 0;
+
+            p {
+              font: 16px/24px @ptserif;
+              color: @mapText;
+
+                &.title {
+                  font: 24px/30px @ptserif;
+                  color: @yellow;
+                  text-transform: uppercase;
+                  margin-top: -2px;
+                  border-bottom: 1px @lineMap solid;
+                  padding-bottom: 17px;
+                  margin-bottom: 22px;
+                }
+            }
+
+            h3 {
+              font: 18px/30px @ptserif;
+              color: #fff;
+              margin-top: 25px;
+              margin-bottom: 19px;
+            }
+        }
+
+        .map-slider-nav {
+          margin-top: 15px;
+
+            .map-slider__element {
+              margin-right: 4px;
+              height: 97px;
+
+                img {
+                  width: 100%;
+                  height: auto;
+                  transition: border 200ms linear;
+                }
+
+                &.slick-current {
+
+                   img {
+                     box-sizing: border-box;
+                     border: 4px #fff solid;
+                   }
+                }
+            }
+        }
+    }
+}
