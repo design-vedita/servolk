@@ -10,6 +10,45 @@
         }
     }
 }
+@media (min-width: 768px) and (max-width: 991px) {
+  header {
+
+      .logo {
+        text-align: center;
+      }
+
+      .top-menu {
+        margin-top: 9px;
+
+          li {
+            padding-right: 28px;
+
+              &:last-of-type {
+                padding-right: 0;
+              }
+          }
+      }
+
+      .call-block {
+        text-align: center;
+
+          .call {
+            margin-top: 0;
+          }
+
+          .search {
+            margin-top: 0;
+          }
+      }
+
+      .search-form {
+        top: 166px;
+        width: calc(~'100% - 30px');
+        right: auto;
+        left: 15px;
+      }
+  }
+}
 @media (min-width: 768px) and (max-width: 1000px) {
 
     #content {
@@ -49,6 +88,35 @@
     }
 }
 @media (max-width: 767px) {
+
+  header {
+
+    .logo {
+      text-align: center;
+    }
+
+    .top-menu {
+
+      margin-top: 13px;
+    }
+
+    .call-block {
+      text-align: center;
+
+        .call,
+        .search {
+          margin-top: 0;
+        }
+    }
+
+    .search-form {
+      top: 170px;
+      right: auto;
+      left: 15px;
+      width: calc(~'100% - 30px');
+    }
+  }
+
   #content {
 
       .room {
@@ -179,33 +247,6 @@
       }
   }
 
-  footer {
-
-    /*.logof {
-      width: 100%;
-      text-align: center;
-      float: none;
-
-       img {
-         width: auto;
-       }
-    }
-
-    .navig-f {
-      width: 100%;
-      margin-top: 20px;
-      float: none;
-    }
-
-    .address-f {
-      display: block !important;
-      width: 100%;
-      float: none;
-      text-align: center;
-    }
-    */
-
-  }
 }
 @media (max-width: 979px) {
   #content {
@@ -259,6 +300,49 @@
   }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
+
+  header {
+
+    .logo {
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .top-menu {
+      margin-top: 65px;
+
+        li {
+          padding-right: 17px;
+
+            a {
+              font-size: 16px;
+            }
+        }
+    }
+
+    .call-block {
+      padding-left: 0;
+
+        .call {
+          margin-top: 60px;
+
+           span {
+             font-size: 15px;
+           }
+        }
+
+        .search {
+          margin-top: 63px;
+        }
+
+    }
+
+    .search-form {
+      top: 52px;
+    }
+  }
   #content {
 
       .gallery,
@@ -418,5 +502,119 @@
               }
           }
       }
+  }
+}
+
+@media (max-width: 740px) {
+  header {
+
+      .top-menu {
+
+          li {
+            padding-right: 3%;
+          }
+      }
+  }
+}
+@media (max-width: 630px) {
+  header {
+
+    .top-menu {
+
+      li {
+        padding-right: 2.5%;
+      }
+    }
+  }
+}
+@media (max-width: 545px) {
+  header {
+
+    .mini-menu {
+      display: block;
+    }
+
+    .top-menu {
+      margin-top: 0;
+      list-style-type: none;
+      margin-bottom: 0;
+      display: none;
+
+        &.view {
+          display: block;
+        }
+
+      li {
+        padding-right: 0;
+        display: list-item;
+        background-color: @bathDesc;
+        padding-left: 8px;
+
+          &:not(:last-of-type)::after {
+            display: none;
+          }
+
+          &:last-of-type {
+            padding-bottom: 12px;
+          }
+
+          a {
+            color: #fff;
+            display: block;
+            padding-top: 13px;
+            padding-bottom: 0;
+            font-size: 16px;
+          }
+      }
+    }
+
+    .call-block, {
+      display: none;
+    }
+
+    .wrapper-search {
+      float: left;
+      width: 100%;
+      padding-left: 15px;
+      padding-right: 15px;
+      height: 60px;
+      display: none;
+
+        &.view {
+          display: block;
+        }
+
+        .search-form {
+          position: static;
+          width: 100%;
+
+            input {
+
+                &[type=text] {
+                  height: 31px;
+                  width: calc(~'100% - 37px');
+                  color: #fff;
+                  background-color: @backSearchMini;
+                  border: none;
+                  font: 16px/24px @ptserif;
+                  padding-left: 4px;
+                }
+
+                &[type=submit] {
+                  width: 23px;
+                  height: 22px;
+                  text-indent: 99999px;
+                  background-image: url(../img/ico-search-white.png);
+                  background-repeat: no-repeat;
+                  background-position: center;
+                  background-color: transparent;
+                }
+            }
+
+            img {
+              display: none;
+            }
+        }
+    }
   }
 }

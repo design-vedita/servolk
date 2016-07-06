@@ -70,7 +70,44 @@
             closeEffect	: 'none'
         });
 
+        function seacrhView() {
+            var closeSearch = document.getElementsByClassName('js-close')[0],
+                openSearch = document.getElementsByClassName('js-search')[0],
+                clientWidth = document.documentElement.clientWidth;
 
+            closeSearch.onclick = function() {
+                this.parentNode.classList.add('search-form--close');
+            }
+
+            openSearch.onclick = function() {
+                closeSearch.parentNode.classList.remove('search-form--close');
+            }
+
+            if (clientWidth <= 545 ) {
+                closeSearch.parentNode.classList.remove('search-form--close');
+            }
+
+        }
+
+        function openMiniMenu() {
+            var menu = document.getElementsByClassName('js-mini-menu')[0],
+                topMenu = document.getElementsByClassName('js-top-menu')[0],
+                search = document.getElementsByClassName('js-wrapper-search')[0];
+
+                menu.onclick = function () {
+                    topMenu.classList.toggle('view');
+                    search.classList.toggle('view');
+                }
+        }
+
+        seacrhView();
+        openMiniMenu();
+
+
+
+        window.onresize = function() {
+            seacrhView();
+        }
 
     });
 }());
