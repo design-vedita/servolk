@@ -244,28 +244,72 @@
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
     <script>
         $(function() {
-            ymaps.ready(init);
-            var myMap;
+            ymaps.ready(function () {
+                var myMap = new ymaps.Map('index-map', {
+                            center: [52.74237449686168,41.401141499999916],
+                            zoom: 10
+                        }, {
+                            searchControlProvider: 'yandex#search'
+                        }),
+                        HintLayout = ymaps.templateLayoutFactory.createClass( "<div class='my-hint'>" +
+                                "{{ properties.address }}<br />" +
+                                "{{ properties.object }}" +
+                                "</div>", {
+                                    // Определяем метод getShape, который
+                                    // будет возвращать размеры макета хинта.
+                                    // Это необходимо для того, чтобы хинт автоматически
+                                    // сдвигал позицию при выходе за пределы карты.
+                                    getShape: function () {
+                                        var el = this.getElement(),
+                                                result = null;
+                                        if (el) {
+                                            var firstChild = el.firstChild;
+                                            result = new ymaps.shape.Rectangle(
+                                                    new ymaps.geometry.pixel.Rectangle([
+                                                        [0, 0],
+                                                        [firstChild.offsetWidth, firstChild.offsetHeight]
+                                                    ])
+                                            );
+                                        }
+                                        return result;
+                                    }
+                                }
+                        );
 
-            function init(){
-                ymaps.ready(init);
-                var myMap,
-                        myPlacemark;
-
-                function init(){
-                    myMap = new ymaps.Map("index-map", {
-                        center: [55.76, 37.64],
-                        zoom: 7
+                    var myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+                        address: "Тамбовская городская баня,",
+                        object: "Баня 'Три Поросёнка'. Чичканова, 75"
+                    }, {
+                        hintLayout: HintLayout,
+                        // Опции.
+                        // Необходимо указать данный тип макета.
+                        iconLayout: 'default#image',
+                        // Своё изображение иконки метки.
+                        iconImageHref: '../img/my-point.png',
+                        // Размеры метки.
+                        iconImageSize: [44, 60],
+                        // Смещение левого верхнего угла иконки относительно
+                        // её "ножки" (точки привязки).
+                        iconImageOffset: [-3, -42]
                     });
-
-                    myPlacemark = new ymaps.Placemark([55.76, 37.64], {
-                        hintContent: 'Москва!',
-                        balloonContent: 'Столица России'
-                    });
-
-                    myMap.geoObjects.add(myPlacemark);
-                }
-            }
+                        /*myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+                            hintContent: 'Городская баня, баня "Три поросёнка"',
+                            balloonContent: 'Тамбовская городская баня, баня "Три Поросёнка". <br/> Чичканова, 75'
+                        }, {
+                            // Опции.
+                            // Необходимо указать данный тип макета.
+                            iconLayout: 'default#image',
+                            // Своё изображение иконки метки.
+                            iconImageHref: '../img/my-point.png',
+                            // Размеры метки.
+                            iconImageSize: [44, 60],
+                            // Смещение левого верхнего угла иконки относительно
+                            // её "ножки" (точки привязки).
+                            iconImageOffset: [-3, -42]
+                        });
+                    */
+                myMap.geoObjects.add(myPlacemark);
+            });
         });
     </script>
 </body>
