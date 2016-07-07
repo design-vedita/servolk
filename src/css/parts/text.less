@@ -1,0 +1,88 @@
+.text-content {
+  .pageTopBorder();
+
+  p {
+
+    &.good-name {
+      .pagetitle();
+    }
+  }
+
+  &__description {
+    margin-top: 27px;
+    background-color: @bathDesc;
+    margin-bottom: 45px;
+    padding-bottom: 31px;
+    padding-left: 44px;
+    padding-top: 38px;
+    padding-right: 30px;
+
+
+      p {
+        font: 16px/24px @ptserif;
+        color: @mapText;
+
+        &.title {
+          font: 24px/30px @ptserif;
+          color: @yellow;
+          text-transform: uppercase;
+          margin-bottom: 6px;
+        }
+
+      }
+
+    .col-md-12 > img {
+      float: left;
+      max-width: 495px;
+      width: 100%;
+      height: auto;
+      border: 10px @mapReview solid;
+      box-sizing: border-box;
+      margin-right: 25px;
+      margin-top: 28px;
+      margin-bottom: 15px;
+    }
+
+      h3 {
+        font: 18px/30px @ptserif;
+        color: #fff;
+        margin-top: 28px;
+        margin-bottom: 3px;
+      }
+
+      h2 {
+        font: 18px/30px @ptserif;
+        color: @yellow;
+        margin-top: 29px;
+        margin-bottom: 6px;
+      }
+
+    .delimiter {
+      margin-top: 45px;
+      margin-bottom: 25px;
+    }
+
+    ul {
+      list-style-type: none;
+
+        li {
+          position: relative;
+          padding-left: 15px;
+          color: #fff;
+          font: 16px/30px @ptserif;
+
+            &::before {
+              display: block;
+              content: '';
+              position: absolute;
+              width: 4px;
+              height: 4px;
+              border-radius: 50%;
+              background-color: @yellow;
+              left: 0;
+              top: calc(~'50% - 2px');
+            }
+        }
+    }
+  }
+}
