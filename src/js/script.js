@@ -109,5 +109,38 @@
             seacrhView();
         }
 
+        function placeholder(elem) {
+
+            var block = document.getElementsByClassName(elem)[0];
+
+                if(!!block) {
+                    var inp = block.querySelectorAll('input');
+
+                    for (var i =0; i < inp.length; i++) {
+
+                        if(inp[i].hasAttribute('placeholder') != false) {
+
+                            inp[i].onfocus = function() {
+                                var text = this.getAttribute('placeholder');
+                                    this.setAttribute('data-text', text);
+                                    this.removeAttribute('placeholder');
+                            }
+
+                            inp[i].onblur = function() {
+                                var dataText = this.getAttribute('data-text');
+                                this.setAttribute('placeholder', dataText);
+                                this.removeAttribute('data-text');
+                            }
+                        }
+                    }
+
+                }
+
+
+        }
+
+        placeholder('contact-form');
+        placeholder('map-content');
+
     });
 }());

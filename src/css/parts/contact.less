@@ -1,0 +1,124 @@
+#contact-map {
+  width: 100%;
+  height: 455px;
+  margin-bottom: 50px;
+}
+.contacts {
+  margin-bottom: 36px;
+}
+#contacts {
+  margin-top: 36px;
+
+
+    input {
+
+        &[type=text] {
+          width: 100%;
+          height: 45px;
+          border: none;
+          box-sizing: border-box;
+          padding-left: 15px;
+          font: 15px/24px @ptserif;
+          color: @mapBorder;
+        }
+
+        &[type=submit],
+        &[type=reset] {
+          border: none;
+          font: 14px/24px @ptserif;
+          color: #fff;
+          background-color: @submitReviewmap;
+          border-radius: 5px;
+          padding: 8px 26px;
+          text-transform: uppercase;
+          margin-top: 35px;
+        }
+
+        &[type=submit] {
+          margin-left: 15px;
+          padding-left: 23px;
+          padding-right: 23px;
+        }
+    }
+
+    textarea {
+      margin-top: 16px;
+      width: 100%;
+      height: 196px;
+      resize: none;
+      box-sizing: border-box;
+      padding-left: 15px;
+      padding-top: 15px;
+    }
+}
+.contact-form {
+    background-color: @bathDesc;
+    padding-left: 44px;
+    padding-top: 29px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+
+      &__address {
+
+          ul {
+            list-style-type: none;
+            margin-top: 27px;
+
+             li {
+
+                span:last-child {
+                  margin-left: 3px;
+                }
+             }
+          }
+
+          span {
+            vertical-align: middle;
+            color: #fff;
+            font: 16px/30px @ptserif;
+          }
+
+      }
+
+      p {
+
+          &.section-title {
+            font: 24px/30px @ptserif;
+            color: @yellow;
+            text-transform: uppercase;
+          }
+      }
+
+      .ico {
+
+          &-point {
+            display: inline-block;
+            width: 12px;
+            height: 16px;
+            vertical-align: middle;
+            background-image: url(../img/ico-point.png);
+            background-size: cover;
+            background-position: center;
+          }
+
+          &-phone {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            vertical-align: middle;
+            background-image: url(../img/ico-phone.png);
+            background-size: cover;
+            background-position: center;
+          }
+
+          &-time {
+            display: inline-block;
+            width: 13px;
+            height: 13px;
+            vertical-align: middle;
+            background-image: url(../img/ico-time.png);
+            background-size: cover;
+            background-position: center;
+          }
+      }
+  }
