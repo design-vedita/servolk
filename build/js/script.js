@@ -142,5 +142,55 @@
         placeholder('contact-form');
         placeholder('map-content');
 
+        function imgHover() {
+            var link = document.getElementsByClassName('js-link');
+
+                if(!!link) {
+
+
+
+                    for (var i = 0; i < link.length; i++) {
+
+
+                        link[i].onmouseover = function(e) {
+
+                            var flag = true;
+
+                            var img = e.target.querySelector('img');
+
+                                if(flag) {
+                                    var url = img.getAttribute('src');
+
+                                        img.setAttribute('data-url', url);
+                                        var type = (url.slice(-4)),
+                                            address = (url.slice(0, -4));
+
+                                        var str  = address + '-hover' + type;
+                                        img.setAttribute('src', str);
+                                }
+
+
+                        };
+
+                        link[i].onmouseleave = function(e) {
+
+                            var flag = false;
+
+                                var img = e.target.querySelector('img');
+
+                                var url = img.getAttribute('data-url');
+
+                                img.setAttribute('src', url);
+
+                        };
+
+                    }
+
+
+                }
+        }
+
+        imgHover();
+
     });
 }());
