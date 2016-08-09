@@ -8,6 +8,148 @@
     }
   }
 
+  .bx-newslist {
+
+    .list-bath {
+      margin-bottom: 50px;
+
+      &__item {
+        height: 169px;
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+          display: block;
+          content: '';
+          width: calc(~'100% + 50px');
+          height: 86px;
+          position: absolute;
+          bottom: -43px;
+          left: -25px;
+          border-radius: 50%;
+          background-color: @linkTop;
+          transition: bottom .5s ease;
+        }
+
+        &:hover {
+
+          &::before {
+            bottom: -25px;
+          }
+
+          & div {
+            bottom: 19px;
+          }
+        }
+
+        img {
+          width: 100%;
+        }
+
+
+        &__title {
+          position: absolute;
+          width: 100%;
+          height: 45px;
+          bottom: 0;
+          text-align: center;
+          transition: bottom .5s ease;
+
+          p {
+            font: 24px/12px @ptserif;
+            color: @yellow;
+            padding-top: 14px;
+          }
+        }
+      }
+    }
+  }
+
+  .search-page {
+    background-color: #625953;
+    margin-bottom: 50px;
+
+      form {
+        padding-top: 7px;
+        padding-left: 44px;
+        height: 41px;
+        box-sizing: border-box;
+        background-color: #7e736c;
+        border: 1px #625953 solid;
+
+          input {
+
+              &[type=submit] {
+                margin-left: 1%;
+                width: 22px;
+                height: 22px;
+                font-size: 0;
+                background-image: url(../images/search-page-ico.png);
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+                vertical-align: middle;
+              }
+
+              &[type=text] {
+                padding-left: 11px;
+                width: calc(~'100% - 76px');
+                height: 27px;
+                font: 16px/24px @ptserif;
+                color: #fff;
+                border: none;
+                background-color: #8d827b;
+                vertical-align: middle;
+                box-sizing: border-box;
+              }
+          }
+      }
+
+      .search-results {
+        padding: 27px 30px 30px 44px;
+
+          a {
+            font: 18px/30px @ptserif;
+            color: #ffcc00;
+          }
+
+          p {
+            margin-top: 5px;
+            margin-bottom: 3px;
+            font: 16px/24px @ptserif;
+            color: #fff;
+          }
+
+          small {
+            font: 14px/24px @ptserif;
+            color: @mapReviewText;
+
+             a {
+
+                &:hover {
+                  color: @orange;
+                }
+             }
+
+              &.bread {
+                display: block;
+                line-height: 20px;
+                margin-top: -4px;
+
+                 a {
+                   font-size: 14px;
+                 }
+              }
+          }
+
+          .search-tpl {
+            padding-bottom: 38px;
+            margin-bottom: 30px;
+            border-bottom: 1px @searchBorder solid;
+          }
+      }
+  }
+
   &__description {
     margin-top: 27px;
     background-color: @bathDesc;

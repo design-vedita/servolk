@@ -3,6 +3,57 @@
 
     $(function(){
 
+        function heightPartners() {
+            var clientWidth = document.documentElement.clientWidth,
+                partners = document.getElementsByClassName('js-partner'),
+                anchor = document.getElementsByClassName('anchor');
+
+                var max = 0,
+                    maxIndex = 0;
+
+                if(!!partners || !!anchor) {
+
+                    if(clientWidth >= 992) {
+
+                        for (var m = 0; m < anchor.length; m++) {
+                            anchor[m].classList.remove('anchor');
+                        }
+
+
+                        for (var i = 0; i < partners.length; i++) {
+
+                            partners[i].style.height = '';
+
+                            if (max < partners[i].offsetHeight) {
+                                maxIndex = i;
+                                max = partners[maxIndex].offsetHeight;
+                            }
+
+                        }
+
+                        (!!partners) ? partners[maxIndex].classList.add('anchor') : '';
+
+                        for (var n = 0; n < partners.length; n++) {
+
+                            if (!partners[n].classList.contains('anchor')) {
+
+                                partners[n].style.height = max + 'px';
+
+                            }
+                        }
+                    }  else {
+
+                        for (var k= 0; k < partners.length; k++) {
+                            partners[k].classList.remove('anchor');
+                            partners[k].style.height = '';
+                        }
+                    }
+                }
+        }
+        heightPartners();
+
+
+
         $('.js-slider').slick({
             dots: true,
             arrows: false,
@@ -107,6 +158,7 @@
 
         window.onresize = function() {
             seacrhView();
+            heightPartners();
         }
 
         function placeholder(elem) {
