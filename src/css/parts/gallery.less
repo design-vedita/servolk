@@ -11,9 +11,53 @@
   .list-albums {
     margin-top: 57px;
 
+    .other-link {
+      font: bold 30px/30px @ptserif !important;
+      color: @linkTop;
+
+        &:hover {
+          color: @otherLink;
+        }
+    }
+
+    .link-block {
+      padding-top: 50px;
+    }
+
+    &__bath-title {
+      margin-bottom: 34px;
+
+        span {
+          padding-left: 5px;
+          padding-right: 35px;
+          font: bold 30px/30px @ptserif;
+          color: @slideArrow;
+          text-transform: uppercase;
+          background-color: @linkTop;
+        }
+    }
+
+    &__preview {
+      margin-top: 10px;
+      font: 18px/30px @ptserif;
+      color: @linkTop;
+    }
+
     &__album-title {
-      border-bottom: 1px @black solid;
+      position: relative;
       padding-bottom: 19px;
+
+        &::after {
+          position: absolute;
+          z-index: 2;
+          left: 0;
+          bottom: 0;
+          display: block;
+          width: 54.8%;
+          height: 1px;
+          border-bottom: 1px @black solid;
+          content: '';
+        }
 
       span {
         font: bold 30px/30px @ptserif;

@@ -31,7 +31,7 @@
 
                         }
 
-                        (!!partners) ? partners[maxIndex].classList.add('anchor') : '';
+                        (!!partners || !!maxIndex) ? partners[maxIndex].classList.add('anchor') : '';
 
                         for (var n = 0; n < partners.length; n++) {
 
