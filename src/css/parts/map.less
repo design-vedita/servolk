@@ -49,6 +49,101 @@
           }
         }
 
+        .reservations {
+          padding-left: 30px;
+          padding-right: 30px;
+          background-color: @bathDesc;
+
+            #reserv {
+
+                & > p {
+                  font: 18px/30px @ptserif;
+                  color: @yellow;
+                }
+
+                form[name=f] {
+                  font: 15px/24px @ptserif;
+                  color: @border;
+
+                    input {
+
+                        &[type=button] {
+                          width: 36px;
+                          height: 36px !important;
+                          border-radius: 50%;
+                          background-color: @border;
+                          font-size: 0;
+                          border: none;
+                          vertical-align: middle;
+                          background-image: url(../images/calendar.png);
+                          background-repeat: no-repeat;
+                          background-position: center;
+                          transition: background .3s ease;
+
+                          &:hover {
+                            background-color: @yellow;
+                          }
+                        }
+
+                        &#data {
+                          margin-left: 16px;
+                          background-color: transparent;
+                          border: none;
+                          font: 18px/30px @ptserif;
+                          color: @border;
+                          vertical-align: middle;
+                        }
+
+                        &[type=submit] {
+                          
+                        }
+                    }
+                }
+
+            }
+
+            #tab {
+
+              tr {
+
+                  &:first-child {
+
+                    td {
+                      background-color: @tdReserv !important;
+                      font: 15px/24px @ptserif;
+                      border-color: @tdReserv;
+                      border-right-color: @border;
+                      color: @border;
+                      text-align: center;
+                    }
+                  }
+
+                  &:nth-of-type(even) {
+
+                    td {
+                      background-color: @tdbathType !important;
+                    }
+                  }
+
+                  &:nth-of-type(odd) {
+
+                      td {
+                        background-color: @tdbathType2;
+                      }
+                  }
+
+                  td {
+                    font: 15px/22px @ptserif;
+                    color: @border;
+                    text-align: center;
+                    border-color: transparent;
+                    border-right-color: @border;
+                    padding: 0 5px;
+                  }
+              }
+            }
+        }
+
         &__inner-map {
           padding: 40px 0 28px 45px;
 
