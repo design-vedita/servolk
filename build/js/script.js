@@ -11,7 +11,7 @@
                 var max = 0,
                     maxIndex = 0;
 
-                if(!!partners || !!anchor) {
+                if(!!partners) {
 
                     if(clientWidth >= 992) {
 
@@ -31,7 +31,10 @@
 
                         }
 
-                        (!!partners || !!maxIndex) ? partners[maxIndex].classList.add('anchor') : '';
+                        if(location.pathname == '/') {
+                            partners[maxIndex].classList.add('anchor');
+                        }
+
 
                         for (var n = 0; n < partners.length; n++) {
 
@@ -136,6 +139,8 @@
 
             if (clientWidth <= 545 ) {
                 closeSearch.parentNode.classList.remove('search-form--close');
+            } else {
+                closeSearch.parentNode.classList.add('search-form--close');
             }
 
         }

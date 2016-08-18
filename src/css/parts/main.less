@@ -192,6 +192,14 @@ header {
           vertical-align: middle;
           position: relative;
           top: 2px;
+
+           span {
+             display: block;
+             font-size: 12px;
+             text-align: right;
+             color: @addressTop;
+             margin-top: -10px;
+           }
         }
     }
 
@@ -292,7 +300,7 @@ header {
                 border-radius: 50%;
                 width: 13px;
                 height: 13px;
-                border: none;
+                border: 1px @yellow solid;
                 font-size: 0;
               }
 
@@ -319,7 +327,28 @@ header {
                 position: relative;
                 overflow: hidden;
 
-                  &::before {
+                  &:first-child {
+
+                      & p {
+                        color: @lightYellow;
+                      }
+                  }
+
+                  &:last-child {
+
+                    & p {
+                      color: @pink;
+                    }
+                  }
+
+                  &:nth-of-type(2) {
+
+                    & p {
+                      color: @blue;
+                    }
+                  }
+
+                  /*&::before {
                     display: block;
                     content: '';
                     width: calc(~'100% + 50px');
@@ -330,9 +359,9 @@ header {
                     border-radius: 50%;
                     background-color: @linkTop;
                     transition: bottom .5s ease;
-                  }
+                  }*/
 
-                  &:hover {
+                  /*&:hover {
 
                       &::before {
                         bottom: -25px;
@@ -341,7 +370,7 @@ header {
                       & div {
                         bottom: 19px;
                       }
-                  }
+                  }*/
 
                   img {
                     width: 100%;
@@ -357,9 +386,8 @@ header {
                     transition: bottom .5s ease;
 
                       p {
-                        font: 24px/12px @ptserif;
-                        color: @yellow;
-                        padding-top: 14px;
+                        font: 50px/12px @ptserif;
+                        margin-bottom: 0;
                       }
                   }
               }
