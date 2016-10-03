@@ -333,7 +333,7 @@ header {
                 position: relative;
                 overflow: hidden;
 
-                  &:first-child {
+                  /*&:first-child {
 
                       & p {
                         color: @lightYellow;
@@ -352,7 +352,7 @@ header {
                     & p {
                       color: #ff0000;
                     }
-                  }
+                  }*/
 
                   /*&::before {
                     display: block;
@@ -392,8 +392,21 @@ header {
                     transition: bottom .5s ease;
 
                       p {
-                        font: 50px/12px @ptserif;
+                        display: inline-block;
+                        padding: 15px 40px;
+                        background-color: #3d3834;
+                        border-radius: 50%;
+                        font: 30px/12px 'PT Serif',serif;
                         margin-bottom: 0;
+                        color: #fc0;
+                        transition-property: color;
+                        transition-duration: 200ms;
+
+                        &:hover {
+                          color: #fff;
+                          transition-property: color;
+                          transition-duration: 200ms;
+                        }
                       }
                   }
               }

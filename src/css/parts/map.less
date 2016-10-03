@@ -54,6 +54,40 @@
           padding-right: 30px;
           background-color: @bathDesc;
 
+            .reservation-legend {
+              margin: 10px 0 15px;
+
+              .rl-col {
+                display: inline-block;
+                vertical-align: top;
+                margin-right: 40px;
+              }
+
+              .rlc-colored-block {
+                width: 40px;
+                height: 22px;
+                display:inline-block;
+                vertical-align:middle;
+                margin-right: 15px;
+              }
+
+              .rlc-colored-block-red {
+                background-color: #b92424;
+              }
+
+              .rlc-colored-block-yellow {
+                background-color: #fc0;
+              }
+
+              .rlc-colored-block + span {
+                vertical-align:middle;
+                font-family: @ptserif;
+                font-size: 15px;
+                color: #eee0d7;
+              }
+
+            }
+
             #reserv {
 
                 & > p {
@@ -68,6 +102,7 @@
                     input {
 
                         &[type=button] {
+                          margin: 0 20px;
                           width: 36px;
                           height: 36px !important;
                           border-radius: 50%;
@@ -148,11 +183,15 @@
                     padding: 0 5px;
 
                       &#red.blue {
-                        background-color: @border;
+                        background-color: #b92424 !important;
+                      }
+
+                      &#red {
+                        background-color: #b92424 !important;
                       }
 
                       &.blue {
-                        background-color: @yellow;
+                        background-color: @yellow !important;
                       }
                   }
               }
@@ -311,6 +350,7 @@
             a {
               color: @yellow;
               text-decoration: none;
+              font-size: 18px;
 
                 &:hover {
                   color: @yellow;
