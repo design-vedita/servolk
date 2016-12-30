@@ -393,12 +393,39 @@
                 }
             }
 
+            .yellow {
+              color: @yellow;
+            }
+
             h3 {
               font: 18px/30px @ptserif;
               color: #fff;
               margin-top: 25px;
               margin-bottom: 19px;
             }
+
+          ul {
+            list-style-type: none;
+
+            li {
+              position: relative;
+              padding-left: 15px;
+              color: #fff;
+              font: 16px/30px @ptserif;
+
+              &::before {
+                display: block;
+                content: '';
+                position: absolute;
+                width: 4px;
+                height: 4px;
+                border-radius: 50%;
+                background-color: @yellow;
+                left: 0;
+                top: 14px;
+              }
+            }
+          }
         }
 
         .map-slider-nav {
